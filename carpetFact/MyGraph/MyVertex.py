@@ -3,44 +3,14 @@ import os.path
 
 
 class CarpetClass :
-    _main_users_file_path = '../Files/users1.json'
-    _local_users_file_path = '../Files/users.json'
-    id = str
-    username = str
-    password = str
-    name = str
-    dateOfBirth = str
-    universityLocation = str
-    field = str
-    workplace = str
-    specialties = str
-    connectionId = list
-    email = str
-    LinkedPeople = dict
+    _main_carpet_file_path = '../Files/carpet.json'
+    color = str
 
     def __init__(self):
         self.LinkedPeople = dict()
-    def setData1(self , username, password, name, dateOfBirth, universityLocation, field, workplace , email, specialties , connectionId):
-        self.username = username
-        self.password = password
-        self.name = name
-        self.dateOfBirth = dateOfBirth
-        self.universityLocation = universityLocation
-        self.field = field
-        self.workplace = workplace
-        self.email = email
-        self.specialties = specialties
-        self.connectionId = connectionId
-    def setData(self,id , name, dateOfBirth, universityLocation, field, workplace , email, specialties , connectionId):
-        self.id = id
-        self.name = name
-        self.dateOfBirth = dateOfBirth
-        self.universityLocation = universityLocation
-        self.field = field
-        self.workplace = workplace
-        self.email = email
-        self.specialties = specialties
-        self.connectionId = connectionId
+    def setData1(self , color):
+        self.color = color
+
 
     @staticmethod
     def getUsers(path): # static function
