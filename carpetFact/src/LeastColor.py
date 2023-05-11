@@ -12,6 +12,7 @@ class FindLeastColor :
         print("please enter carpet matrix : first enter the amount of areas:")
 
         area = input()
+        area = int(area)
 
         carpet_matrix = [[0] * area for x in range (area)]
 
