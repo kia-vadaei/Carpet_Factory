@@ -3,6 +3,9 @@ import os.path
 from MyGraph import Graph
 from PIL import Image
 from Sort import QuickSort
+from MyMap import MyMap
+
+
 
 class Carpet :
     _main_carpet_file_path = '../Files/carpet.json'
@@ -101,7 +104,10 @@ class Carpet :
     def search(input_carpet , carpets=list):
         score_list = list()
         for carpet in carpets:
-            score_list.append(Carpet.calculate_similarity(input_carpet , carpet.carpet_layout_matrix))
+            myMap = MyMap()
+            myMap.carpet_matrix = carpet
+            myMap.value = Carpet.calculate_similarity(input_carpet , carpet.carpet_layout_matrix)
+            score_list.append(myMap)
 
         #calling the quick sort method
         QuickSort.quickSort(score_list , 0 , len(score_list)-1)
