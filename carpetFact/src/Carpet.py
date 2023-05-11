@@ -2,6 +2,7 @@ import json
 import os.path
 from MyGraph import Graph
 from PIL import Image
+from Sort import QuickSort
 
 class Carpet :
     _main_carpet_file_path = '../Files/carpet.json'
@@ -100,7 +101,7 @@ class Carpet :
         score_list = list()
         for carpet in carpets:
             score_list.append(Carpet.calculate_similarity(input_carpet , carpets))
-        # quick sort -> sort(score_list)
+         #quick sort -> sort(score_list)
         # retrun scorelist[0:3]
 
 #    def to_string(self):

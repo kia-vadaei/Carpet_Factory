@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415691f7-fd8c-466d-88ec-9c80e6fc5791" name="Changes" comment="finding the least color we need to color a graph algorithm printing method!">
+    <list default="true" id="415691f7-fd8c-466d-88ec-9c80e6fc5791" name="Changes" comment="finding the least color we need to color a graph algorithm printing method checked!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeastColor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeastColor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Carpet.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carpet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
       <updated>1683728247535</updated>
       <workItem from="1683728248734" duration="8134000" />
       <workItem from="1683738291485" duration="4000" />
-      <workItem from="1683814326950" duration="3663000" />
+      <workItem from="1683814326950" duration="5947000" />
     </task>
     <task id="LOCAL-00001" summary="carpet and shape class was defined!">
       <created>1683729715563</created>
@@ -82,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683816455063</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finding the least color we need to color a graph algorithm printing method checked!">
+      <created>1683818032374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683818032374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +122,8 @@
     <MESSAGE value="checking graph" />
     <MESSAGE value="finding the least color we need to color a graph algorithm !" />
     <MESSAGE value="finding the least color we need to color a graph algorithm printing method!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finding the least color we need to color a graph algorithm printing method!" />
+    <MESSAGE value="finding the least color we need to color a graph algorithm printing method checked!" />
+    <option name="LAST_COMMIT_MESSAGE" value="finding the least color we need to color a graph algorithm printing method checked!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -133,6 +140,6 @@
     <SUITE FILE_PATH="coverage/carpetFact$Vertex.coverage" NAME="Vertex Coverage Results" MODIFIED="1683736378831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/carpetFact$LeastColor.coverage" NAME="LeastColor Coverage Results" MODIFIED="1683817256488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/carpetFact$MyEdge.coverage" NAME="MyEdge Coverage Results" MODIFIED="1683736288931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/carpetFact$main.coverage" NAME="main Coverage Results" MODIFIED="1683817855632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/carpetFact$main.coverage" NAME="main Coverage Results" MODIFIED="1683823713331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
