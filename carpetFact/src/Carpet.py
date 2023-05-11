@@ -101,8 +101,10 @@ class Carpet :
         score_list = list()
         for carpet in carpets:
             score_list.append(Carpet.calculate_similarity(input_carpet , carpets))
-         #quick sort -> sort(score_list)
-        # retrun scorelist[0:3]
 
-#    def to_string(self):
+        #calling the quick sort method
+        QuickSort.quickSort(score_list , 0 , len(score_list)-1)
+
+        return score_list[0:3]
+
 
