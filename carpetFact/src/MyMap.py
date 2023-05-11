@@ -1,12 +1,11 @@
-from Carpet import Carpet
 
 
 class MyMap:
-    carpet_matrix = Carpet
+    carpet = None
     value = int
 
-    def __init__(self , carpet_matrix , value):
-        self.carpet_matrix = carpet_matrix
+    def __init__(self, carpet, value):
+        self.carpet = carpet
         self.value = value
 
 

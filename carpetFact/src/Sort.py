@@ -8,8 +8,8 @@ class QuickSort :
     def partition(map =list , low = int, high = int):
 
         # choose the rightmost element as pivot
-        if isinstance(map[high] ,MyMap) :
-            pivot = MyMap(map[high]).value
+
+        pivot = map[high].value
 
 
         # pointer for greater element
@@ -18,7 +18,7 @@ class QuickSort :
         # traverse through all elements
         # compare each element with pivot
         for j in range(low, high):
-            if MyMap(map[j]).value <= pivot:
+            if map[j].value <= pivot:
                 # If element smaller than pivot is found
                 # swap it with the greater element pointed by i
                 i = i + 1

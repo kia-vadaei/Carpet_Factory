@@ -10,6 +10,7 @@ from MyMap import MyMap
 class Carpet :
     _main_carpet_file_path = '../Files/carpet.json'
     carpet_layout_matrix = list()
+    carpet_layout_6_in_8_matrix = list()
     layout_path = str
     price = float
     carpet_graph = Graph
@@ -28,6 +29,7 @@ class Carpet :
                 magnified_row.extend([element] * scale_factor)
             magnified_matrix.extend([magnified_row] * scale_factor)
 
+        self.carpet_layout_6_in_8_matrix = matrix
         self.carpet_layout_matrix = magnified_matrix    #To set the obj matrix
 
         return magnified_matrix
@@ -102,16 +104,16 @@ class Carpet :
 
     @staticmethod
     def search(input_carpet , carpets=list):
+
         score_list = list()
         for carpet in carpets:
-            myMap = MyMap()
-            myMap.carpet_matrix = carpet
-            myMap.value = Carpet.calculate_similarity(input_carpet , carpet.carpet_layout_matrix)
+            myMap = MyMap(carpet , Carpet.calculate_similarity(input_carpet.carpet_layout_6_in_8_matrix , carpet.carpet_layout_6_in_8_matrix))
+
             score_list.append(myMap)
 
         #calling the quick sort method
         QuickSort.quickSort(score_list , 0 , len(score_list)-1)
 
-        return score_list[0:3]
+        return score_list[len(score_list) - 3 : ]
 
 
