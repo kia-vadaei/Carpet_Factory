@@ -1,10 +1,8 @@
 import random
 
 from Carpet import Carpet
-from Shape import Shape
 from MyGraph import Graph
 from Vertex import Vertex
-from MyEdge import EdgeClass
 vertices = list()
 tmp_list = ["morabaa" , "mostatil" , "mosalas"]
 tmp2_list = ["red" , "green" , "blue" , "yellow"]
