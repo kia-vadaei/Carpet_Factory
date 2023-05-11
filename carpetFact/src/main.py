@@ -1,12 +1,10 @@
 import random
 
 from Carpet import Carpet
+from Shape import Shape
 from MyGraph import Graph
 from Vertex import Vertex
-from LeastColor import FindLeastColor
-
-
-
+from MyEdge import EdgeClass
 vertices = list()
 tmp_list = ["morabaa" , "mostatil" , "mosalas"]
 tmp2_list = ["red" , "green" , "blue" , "yellow"]
@@ -30,6 +28,6 @@ for row in m:
         row[i] = int(tmp_row[i])
 
 x = Carpet("asd" , 0)
-m = Carpet.magnify_plan(list(m) , 50)
+#m = x.magnify_plan(list(m) , 50)
 x.convert_matrix_to_image(m, 'r.png')
 x.show_layout()
