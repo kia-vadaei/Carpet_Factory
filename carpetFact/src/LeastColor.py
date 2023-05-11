@@ -56,10 +56,14 @@ class FindLeastColor :
         if self.graphColourUtil(m, colour, 0) == False:
             return False
 
-        # Print the solution
-        print
-        "Solution exist and Following are the assigned colours:"
+        uniqe_colors = set()
         for c in colour:
-            print
-            c,
+            if c in uniqe_colors:
+                continue
+            uniqe_colors.add(c)
+
+        # Print the solution
+        print("the least amount of color you need to color this carpet graph is : ")
+        print(len(uniqe_colors))
+
         return True

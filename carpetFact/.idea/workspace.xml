@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415691f7-fd8c-466d-88ec-9c80e6fc5791" name="Changes" comment="graph">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+    <list default="true" id="415691f7-fd8c-466d-88ec-9c80e6fc5791" name="Changes" comment="finding the least color we need to color a graph algorithm !">
+      <change beforePath="$PROJECT_DIR$/src/LeastColor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeastColor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
       <updated>1683728247535</updated>
       <workItem from="1683728248734" duration="8134000" />
       <workItem from="1683738291485" duration="4000" />
-      <workItem from="1683814326950" duration="1702000" />
+      <workItem from="1683814326950" duration="2097000" />
     </task>
     <task id="LOCAL-00001" summary="carpet and shape class was defined!">
       <created>1683729715563</created>
@@ -67,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683737978777</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finding the least color we need to color a graph algorithm !">
+      <created>1683816079439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683816079439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +105,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="carpet and shape class was defined!" />
     <MESSAGE value="checking graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking graph" />
+    <MESSAGE value="finding the least color we need to color a graph algorithm !" />
+    <option name="LAST_COMMIT_MESSAGE" value="finding the least color we need to color a graph algorithm !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
