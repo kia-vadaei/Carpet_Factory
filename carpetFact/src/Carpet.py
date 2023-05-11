@@ -51,6 +51,8 @@ class Carpet :
                     image.putpixel((x, y), (0, 255, 0))  # Set pixel color to green
                 if matrix[y][x] == 3:   #blue
                     image.putpixel((x, y), (0, 0, 255))  # Set pixel color to blue
+                if matrix[y][x] == 4:   #blue
+                    image.putpixel((x, y), (255, 255, 0))  # Set pixel color to blue
 
         # Save the image to the specified output path
         self.layout_path = output_path

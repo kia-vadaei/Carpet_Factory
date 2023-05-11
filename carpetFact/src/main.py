@@ -106,11 +106,11 @@ m7 = [
 [2, 2, 2, 2, 2, 2],
 [2, 2, 2, 2, 2, 2],
 [2, 2, 2, 2, 2, 2],
-[2, 2, 0, 0, 2, 2],
-[2, 2, 0, 0, 2, 2],
-[2, 2, 2, 2, 2, 2],
-[2, 2, 2, 2, 2, 2],
-[2, 2, 2, 2, 2, 2]
+[2, 2, 0, 4, 2, 2],
+[2, 2, 0, 0, 2, 3],
+[2, 2, 2, 2, 2, 3],
+[2, 2, 2, 2, 2, 3],
+[2, 4, 3, 3, 3, 3]
 ]
 
 m_in = [
@@ -124,15 +124,15 @@ m_in = [
 [2, 2, 2, 2, 2, 2]
 ]
 c_in = Carpet(0)
-c_in.set_layout(m_in , 'input.png')
+c_in.set_layout(m_in , 'Pictures/input.png')
 
-c1.set_layout(m1, 'p1.png')
-c2.set_layout(m2, 'p2.png')
-c3.set_layout(m3, 'p3.png')
-c4.set_layout(m4, 'p4.png')
-c5.set_layout(m5, 'p5.png')
-c6.set_layout(m6, 'p6.png')
-c7.set_layout(m7, 'p7.png')
+c1.set_layout(m1, 'Pictures/p1.png')
+c2.set_layout(m2, 'Pictures/p2.png')
+c3.set_layout(m3, 'Pictures/p3.png')
+c4.set_layout(m4, 'Pictures/p4.png')
+c5.set_layout(m5, 'Pictures/p5.png')
+c6.set_layout(m6, 'Pictures/p6.png')
+c7.set_layout(m7, 'Pictures/p7.png')
 l = list()
 l.append(c1)
 l.append(c2)
