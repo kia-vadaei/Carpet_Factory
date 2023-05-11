@@ -3,6 +3,10 @@ import random
 from Carpet import Carpet
 from MyGraph import Graph
 from Vertex import Vertex
+from LeastColor import FindLeastColor
+
+
+
 vertices = list()
 tmp_list = ["morabaa" , "mostatil" , "mosalas"]
 tmp2_list = ["red" , "green" , "blue" , "yellow"]
