@@ -1,7 +1,3 @@
-
-
-
-
 class FindLeastColor :
 
     graph = None
