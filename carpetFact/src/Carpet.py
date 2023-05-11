@@ -5,15 +5,18 @@ from PIL import Image
 
 class Carpet :
     _main_carpet_file_path = '../Files/carpet.json'
-    carpet_map = [[0 for x in range(300)] for y in range(400)]
+    carpet_layout = [[0 for x in range(300)] for y in range(400)]
+    layout_path = str
     price = float
     carpet_graph = Graph
+
     def __init__(self, carpet_map , price):
         self.carpet_map = carpet_map
         self.price = price
+        self.layout_path = ''
 
     @staticmethod
-    def magnify_plan(self, matrix , scale_factor = 50):
+    def magnify_plan(matrix , scale_factor):
         magnified_matrix = []
         for row in matrix:
             magnified_row = []
@@ -38,8 +41,14 @@ class Carpet :
                     image.putpixel((x, y), (0, 0, 255))  # Set pixel color to blue
 
         # Save the image to the specified output path
+        self.layout_path = output_path
         image.save(output_path)
 
+    def show_layout(self) :
+        if self.layout_path != '':
+            img = Image.open(self.layout_path)
+            img.show()
+        else: raise Exception('This carpet has no layout yet!')
 
 #    def to_string(self):
 
