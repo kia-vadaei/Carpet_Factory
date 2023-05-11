@@ -11,8 +11,8 @@ class Carpet :
     price = float
     carpet_graph = Graph
 
-    def __init__(self, carpet_map , price):
-        self.carpet_map = carpet_map
+    def __init__(self , price):
+        #self.carpet_map = carpet_map
         self.price = price
         self.layout_path = ''
 
@@ -29,7 +29,7 @@ class Carpet :
 
         return magnified_matrix
 
-    def convert_matrix_to_image(self , matrix, output_path):
+    def set_layout(self , matrix, output_path):
         height = len(matrix)
         width = len(matrix[0])
         matrix = self.magnify_plan(matrix , int(300 / width))
@@ -97,10 +97,11 @@ class Carpet :
 
         return similarity_score
 
-    def search(self , input_carpet , carpets=list):
+    @staticmethod
+    def search(input_carpet , carpets=list):
         score_list = list()
         for carpet in carpets:
-            score_list.append(Carpet.calculate_similarity(input_carpet , carpets))
+            score_list.append(Carpet.calculate_similarity(input_carpet , carpet.carpet_layout_matrix))
 
         #calling the quick sort method
         QuickSort.quickSort(score_list , 0 , len(score_list)-1)
