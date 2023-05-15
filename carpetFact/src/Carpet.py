@@ -16,14 +16,11 @@ class Carpet :
     carpet_layout_6_in_8_matrix = list()
     layout_path = str
     price = float
-    reverse_price = float
     carpet_graph = Graph
 
     def __init__(self , price):
         #self.carpet_map = carpet_map
         self.price = price
-
-        self.reverse_price = 1/price
 
         all_layout_list = list()
 
@@ -128,8 +125,7 @@ class Carpet :
         return score_list[len(score_list) - 3 : ]
 
 
-
-#==================================================================
+    @staticmethod
     def efficient_shopping(W, wt, val, n):
         K = [[0 for w in range(W + 1)]
              for i in range(n + 1)]
@@ -140,10 +136,8 @@ class Carpet :
             for w in range(W + 1):
                 if i == 0 or w == 0:
                     K[i][w] = 0
-                elif wt[i - 1] <= w:
-                    K[i][w] = max(val[i - 1].price
-                                  + K[i - 1][w - wt[i - 1]].reverse_price,
-                                  K[i - 1][w])
+                elif wt[i - 1].price <= w:
+                    K[i][w] = max(val[i - 1] + K[i - 1][w - wt[i - 1].price], K[i - 1][w])
                 else:
                     K[i][w] = K[i - 1][w]
 
@@ -161,12 +155,12 @@ class Carpet :
             else:
 
                 # This item is included.
-                print(wt[i - 1].reverse_price)
+                print(wt[i - 1].price)
 
                 # Since this weight is included
                 # its value is deducted
-                res = res - val[i - 1].price
-                w = w - wt[i - 1].reverse_price
+                res = res - val[i - 1]
+                w = w - wt[i - 1].price
 
 
     def new_carpet_layout(self):
