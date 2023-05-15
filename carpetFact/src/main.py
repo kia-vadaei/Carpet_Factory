@@ -151,4 +151,5 @@ from MyEdge import EdgeClass
 # print(r)
 
 c = Carpet(0)
-c.open_layout()
+c.convert_image_to_matrix()
+c.show_layout()

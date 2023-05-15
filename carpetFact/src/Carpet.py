@@ -27,7 +27,9 @@ class Carpet :
 
         all_layout_list = list()
 
-
+    def set_matrix(self , matrix , magnified_matrix):
+        self.carpet_layout_6_in_8_matrix = matrix
+        self.carpet_layout_matrix = magnified_matrix    #To set the obj matrix
 
     def magnify_plan(self , matrix , scale_factor):
         magnified_matrix = []
@@ -37,8 +39,7 @@ class Carpet :
                 magnified_row.extend([element] * scale_factor)
             magnified_matrix.extend([magnified_row] * scale_factor)
 
-        self.carpet_layout_6_in_8_matrix = matrix
-        self.carpet_layout_matrix = magnified_matrix    #To set the obj matrix
+        self.set_matrix(matrix , magnified_matrix)
 
         return magnified_matrix
 
@@ -171,12 +172,32 @@ class Carpet :
     def new_carpet_layout(self):
         subprocess.Popen('mspaint.exe')
 
+    def convert_image_to_matrix(self):
 
+        image_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
+        image = Image.open(image_path.name)
+        # image = image.convert('L')  # Convert image to grayscale
 
-    def open_layout(self):
-        file_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
-        img = Image.open(file_path.name)
-        img = img.resize((300,400))
-        img = img.resize((6,8))
-        img.save("p6in8.png")
+        # Convert image to a 2D matrix
+        matrix = []
+        width, height = image.size
+        for y in range(height):
+            row = []
+            for x in range(width):
+                pixel_value = image.getpixel((x, y))
+                if pixel_value == (255, 0, 0):
+                    row.append(1)  # red pixel
+                elif pixel_value == (0, 255, 0):
+                    row.append(2)  # green pixel
+                elif pixel_value == (0, 0, 255):
+                    row.append(3)  # blue pixel
+                elif pixel_value == (255, 255, 0):
+                    row.append(4)  # yellow pixel
+                else:
+                    row.append(0)  # White pixel
+            matrix.append(row)
 
+        output_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
+        self.set_layout(matrix , output_path)
+
+        return matrix
