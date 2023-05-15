@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415691f7-fd8c-466d-88ec-9c80e6fc5791" name="Changes" comment="merging sort and similarities !">
+    <list default="true" id="415691f7-fd8c-466d-88ec-9c80e6fc5791" name="Changes" comment="merging sort and similarities 2! adding map for sorting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Carpet.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carpet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sort.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,9 @@
       <updated>1683728247535</updated>
       <workItem from="1683728248734" duration="8134000" />
       <workItem from="1683738291485" duration="4000" />
-      <workItem from="1683814326950" duration="9405000" />
+      <workItem from="1683814326950" duration="10169000" />
+      <workItem from="1684006038723" duration="1353000" />
+      <workItem from="1684181950518" duration="1779000" />
     </task>
     <task id="LOCAL-00001" summary="carpet and shape class was defined!">
       <created>1683729715563</created>
@@ -110,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683825809971</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="merging sort and similarities 2! adding map for sorting">
+      <created>1683830159277</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683830159277</updated>
+    </task>
+    <task id="LOCAL-00010" summary="merging sort and similarities 2! adding map for sorting">
+      <created>1683830172223</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683830172223</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +162,8 @@
     <MESSAGE value="finding the least color we need to color a graph algorithm printing method checked!" />
     <MESSAGE value="quick sort added !" />
     <MESSAGE value="merging sort and similarities !" />
-    <option name="LAST_COMMIT_MESSAGE" value="merging sort and similarities !" />
+    <MESSAGE value="merging sort and similarities 2! adding map for sorting" />
+    <option name="LAST_COMMIT_MESSAGE" value="merging sort and similarities 2! adding map for sorting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

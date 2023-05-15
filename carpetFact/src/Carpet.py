@@ -16,12 +16,15 @@ class Carpet :
     carpet_layout_6_in_8_matrix = list()
     layout_path = str
     price = float
+    reverse_price = float
     carpet_graph = Graph
 
     def __init__(self , price):
         #self.carpet_map = carpet_map
         self.price = price
-        self.layout_path = ''
+
+        self.reverse_price = 1/price
+
         all_layout_list = list()
 
     def set_matrix(self , matrix , magnified_matrix):
@@ -123,6 +126,47 @@ class Carpet :
         QuickSort.quickSort(score_list , 0 , len(score_list)-1)
 
         return score_list[len(score_list) - 3 : ]
+
+
+
+#==================================================================
+    def efficient_shopping(W, wt, val, n):
+        K = [[0 for w in range(W + 1)]
+             for i in range(n + 1)]
+
+        # Build table K[][] in bottom
+        # up manner
+        for i in range(n + 1):
+            for w in range(W + 1):
+                if i == 0 or w == 0:
+                    K[i][w] = 0
+                elif wt[i - 1] <= w:
+                    K[i][w] = max(val[i - 1].price
+                                  + K[i - 1][w - wt[i - 1]].reverse_price,
+                                  K[i - 1][w])
+                else:
+                    K[i][w] = K[i - 1][w]
+
+        # stores the result of Knapsack
+        res = K[n][W]
+        print(res)
+
+        w = W
+        for i in range(n, 0, -1):
+            if res <= 0:
+                break
+
+            if res == K[i - 1][w]:
+                continue
+            else:
+
+                # This item is included.
+                print(wt[i - 1].reverse_price)
+
+                # Since this weight is included
+                # its value is deducted
+                res = res - val[i - 1].price
+                w = w - wt[i - 1].reverse_price
 
 
     def new_carpet_layout(self):
