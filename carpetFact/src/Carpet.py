@@ -1,5 +1,8 @@
 import json
 import os.path
+import subprocess
+from tkinter import filedialog
+
 from MyGraph import Graph
 from PIL import Image
 from Sort import QuickSort
@@ -19,6 +22,7 @@ class Carpet :
         #self.carpet_map = carpet_map
         self.price = price
         self.layout_path = ''
+        all_layout_list = list()
 
 
     def magnify_plan(self , matrix , scale_factor):
@@ -119,3 +123,14 @@ class Carpet :
         return score_list[len(score_list) - 3 : ]
 
 
+    def new_carpet_layout(self):
+        subprocess.Popen('mspaint.exe')
+
+
+
+    def open_layout(self):
+        file_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
+        img = Image.open(file_path.name)
+        img = img.resize((300,400))
+        img = img.resize((6,8))
+        img.save("p6in8.png")
