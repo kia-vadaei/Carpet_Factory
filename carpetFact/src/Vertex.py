@@ -3,17 +3,15 @@ from Shape import Shape
 #from MyEdge import EdgeClass
 
 class Vertex:
-    node = Shape
+
+    is_department = bool
+    name = str
     linked_vertices = dict
-    vertex_code = str
 
-
-    def __init__(self, type , color):
-        #self.vertex_code =
+    def __init__(self, name, is_department):
+        self.name = name
+        self.is_department = is_department
         self.linked_vertices = dict()
-        shp = Shape(type, color)
-        self.node = shp
-
 
     def add_link(self, u , e):
         self.linked_vertices[u] = e
