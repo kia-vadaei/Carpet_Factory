@@ -155,28 +155,39 @@ from MyEdge import EdgeClass
 # c.show_layout()
 
 
-c1 = Carpet(8)
-c2 = Carpet(7)
-c3 = Carpet(19)
-c4 = Carpet(23)
-c5 = Carpet(43)
-c6 = Carpet(3)
-c7 = Carpet(9)
+# c1 = Carpet(8)
+# c2 = Carpet(7)
+# c3 = Carpet(19)
+# c4 = Carpet(23)
+# c5 = Carpet(43)
+# c6 = Carpet(3)
+# c7 = Carpet(9)
+#
+# l = list()
+# l.append(c1)
+# l.append(c2)
+# l.append(c3)
+# l.append(c4)
+# l.append(c5)
+# l.append(c6)
+# l.append(c7)
+#
+# val = list()
+#
+# for i in range(7):
+#     val.append(1)
+#
+# Carpet.efficient_shopping(43 , l , val ,len(l))
+#
 
-l = list()
-l.append(c1)
-l.append(c2)
-l.append(c3)
-l.append(c4)
-l.append(c5)
-l.append(c6)
-l.append(c7)
+g = Graph()
+g.add_vertex("k" , 0)
+g.add_vertex("k2" , 0)
+g.add_vertex("k3" , 0)
+g.add_vertex("k4" , 0)
+g.add_vertex("k5" , 0)
 
-val = list()
-
-for i in range(7):
-    val.append(1)
-
-Carpet.efficient_shopping(43 , l , val ,len(l))
-
+g.add_edge('k' , 'k2')
+g.add_edge('k3' , 'k4')
+print('Done')
 
