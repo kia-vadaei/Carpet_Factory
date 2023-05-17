@@ -216,7 +216,7 @@ import matplotlib.pyplot as plt
 #     [0, 0, 0, 0, 0, 0, 5, 0, 3],
 #     [0, 0, 0, 0, 0, 0, 0, 3, 0]
 # ]
-
+#
 # vertices2 = list()
 # v0 = Vertex(0,False)
 # v1 = Vertex(1,True)
