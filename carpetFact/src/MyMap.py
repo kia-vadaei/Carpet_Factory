@@ -1,11 +1,11 @@
 
 
 class MyMap:
-    carpet = None
+    key = None
     value = int
 
-    def __init__(self, carpet, value):
-        self.carpet = carpet
+    def __init__(self, key, value):
+        self.key = key
         self.value = value
 
 
