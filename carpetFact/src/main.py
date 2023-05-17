@@ -1,14 +1,20 @@
+import os
 import random
+import time
 
 from Carpet import Carpet
-from Carpet_Factory.carpetFact.src import CityMap
+from LeastColor import AdjacencyGraph
 from CityMap import CityMap, InterSection
 from Shape import Shape
 from MyGraph import Graph
 from Vertex import Vertex
 from MyEdge import EdgeClass
 import matplotlib.pyplot as plt
+import colorama
+from colorama import Fore
+from colorama import Back
 
+#os.system('cls')
 # vertices = list()
 # tmp_list = ["morabaa" , "mostatil" , "mosalas"]
 # tmp2_list = ["red" , "green" , "blue" , "yellow"]
@@ -239,3 +245,48 @@ import matplotlib.pyplot as plt
 # c = CityMap(len(vertices2) , vertices2 , graph)
 # rslt = c.dijkstra(7)
 # print(rslt.key.name)
+
+def animated_effect(str):
+    for c in str:
+        print(c , end='')
+        time.sleep(90/1000)
+    time.sleep(200/1000)
+#print('\t\t*** UNIVERSITY OF ISFAHAN ***')
+#animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
+
+
+while True:
+    print(Fore.MAGENTA + '1) Design a new carpet')
+    print('2) Search by carpet design')
+    print('3) Purchase based on amount of money')
+    print('4) Navigate to the nearest factory store')
+    cmd = input(Fore.BLUE + '👉🏻 ')
+    print(Fore.MAGENTA)
+    if cmd == '1':  # Design a new carpet
+        print("🟪 Enter the amount of areas :" , end=' ')
+        count = int(input())
+
+        graph_matrix = [[0] * count for x in range (count)]
+
+        print("\n🟪 Enter the adjacency of each of the areas :" ,end='\n')
+
+        for row in graph_matrix:
+            tmp_row = input().split(' ')
+            for i in range(len(row)):
+                row[i] = int(tmp_row[i])
+
+        g = AdjacencyGraph()
+        rslt = g.getting_carpet_adjacency_matrix(count , graph_matrix)
+        print("\n🟣 The least amount of color you need to color this carpet graph is :" , end= ' ')
+        print(Fore.CYAN + str(rslt) , end='\n\n')
+
+    elif cmd == '2':    # Search by carpet design
+        input_carpet = Carpet(0)
+
+        input_carpet.load_image()
+
+    elif cmd == '3':    # Purchase based on amount of money
+        print()
+    elif cmd == '4':    # Navigate to the nearest factory store
+        print()
+

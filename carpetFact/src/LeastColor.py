@@ -1,35 +1,20 @@
-class FindLeastColor :
+class AdjacencyGraph :
 
     graph = None
     vertex = int
 
 
-    def getting_carpet_adjacency_matrix(self):
-        print("please enter carpet matrix : first enter the amount of areas:")
+    def getting_carpet_adjacency_matrix(self , count , graph_matrix):
+        self.graph = graph_matrix
+        self.vertex = count
 
-        area = input()
-        area = int(area)
-
-        carpet_matrix = [[0] * area for x in range (area)]
-
-
-        print("now please enter the adjacency of each of the areas : ")
-
-        for row in carpet_matrix:
-            tmp_row = input().split(' ')
-            for i in range(len(row)):
-                row[i] = int(tmp_row[i])
-
-        self.graph = carpet_matrix
-        self.vertex = area
-
-        color  =  area
-        self.graphColouring(color)
+        color = count
+        return self.graph_colouring(color)
 
 
 
     # is safe for vertex v
-    def isSafe(self, v, colour, c):
+    def is_safe(self, v, colour, c):
         for i in range(self.vertex):
             if self.graph[v][i] == 1 and colour[i] == c:
                 return False
@@ -37,21 +22,21 @@ class FindLeastColor :
 
     # A recursive utility function to solve m
     # coloring  problem
-    def graphColourUtil(self, m, colour, v):
+    def graph_colour_util(self, m, colour, v):
         if v == self.vertex:
             return True
 
         for c in range(1, m + 1):
-            if self.isSafe(v, colour, c) == True:
+            if self.is_safe(v, colour, c) == True:
                 colour[v] = c
-                if self.graphColourUtil(m, colour, v + 1) == True:
+                if self.graph_colour_util(m, colour, v + 1) == True:
                     return True
                 colour[v] = 0
-
-    def graphColouring(self, m):
+        return False
+    def graph_colouring(self, m):
         colour = [0] * self.vertex
-        if self.graphColourUtil(m, colour, 0) == False:
-            return False
+        if self.graph_colour_util(m, colour, 0) == False:
+            return -1
 
         uniqe_colors = set()
         for c in colour:
@@ -60,7 +45,6 @@ class FindLeastColor :
             uniqe_colors.add(c)
 
         # Print the solution
-        print("the least amount of color you need to color this carpet graph is : ")
-        print(len(uniqe_colors))
+        # print("the least amount of color you need to color this carpet graph is : ")
+        return len(uniqe_colors)
 
-        return True

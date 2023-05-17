@@ -64,6 +64,38 @@ class Carpet :
         self.layout_path = output_path
         image.save(output_path)
 
+    def load_image(self):
+
+        image_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
+        image = Image.open(image_path.name)
+        # image = image.convert('L')  # Convert image to grayscale
+
+        # Convert image to a 2D matrix
+        matrix = []
+        width, height = image.size
+        for y in range(height):
+            row = []
+            for x in range(width):
+                pixel_value = image.getpixel((x, y))
+                if pixel_value == (255, 0, 0):
+                    row.append(1)  # red pixel
+                elif pixel_value == (0, 255, 0):
+                    row.append(2)  # green pixel
+                elif pixel_value == (0, 0, 255):
+                    row.append(3)  # blue pixel
+                elif pixel_value == (255, 255, 0):
+                    row.append(4)  # yellow pixel
+                else:
+                    row.append(0)  # White pixel
+            matrix.append(row)
+
+        output_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
+        self.set_layout(matrix , output_path)
+
+        return matrix
+
+
+
     def show_layout(self) :
         if self.layout_path != '':
             img = Image.open(self.layout_path)
@@ -166,32 +198,3 @@ class Carpet :
     def new_carpet_layout(self):
         subprocess.Popen('mspaint.exe')
 
-    def convert_image_to_matrix(self):
-
-        image_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
-        image = Image.open(image_path.name)
-        # image = image.convert('L')  # Convert image to grayscale
-
-        # Convert image to a 2D matrix
-        matrix = []
-        width, height = image.size
-        for y in range(height):
-            row = []
-            for x in range(width):
-                pixel_value = image.getpixel((x, y))
-                if pixel_value == (255, 0, 0):
-                    row.append(1)  # red pixel
-                elif pixel_value == (0, 255, 0):
-                    row.append(2)  # green pixel
-                elif pixel_value == (0, 0, 255):
-                    row.append(3)  # blue pixel
-                elif pixel_value == (255, 255, 0):
-                    row.append(4)  # yellow pixel
-                else:
-                    row.append(0)  # White pixel
-            matrix.append(row)
-
-        output_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
-        self.set_layout(matrix , output_path)
-
-        return matrix
