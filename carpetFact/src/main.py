@@ -1,10 +1,14 @@
 import random
 
 from Carpet import Carpet
+from Carpet_Factory.carpetFact.src import CityMap
+from CityMap import CityMap, InterSection
 from Shape import Shape
 from MyGraph import Graph
 from Vertex import Vertex
 from MyEdge import EdgeClass
+import matplotlib.pyplot as plt
+
 # vertices = list()
 # tmp_list = ["morabaa" , "mostatil" , "mosalas"]
 # tmp2_list = ["red" , "green" , "blue" , "yellow"]
@@ -180,14 +184,58 @@ from MyEdge import EdgeClass
 # Carpet.efficient_shopping(43 , l , val ,len(l))
 #
 
-g = Graph()
-g.add_vertex("k" , 0)
-g.add_vertex("k2" , 0)
-g.add_vertex("k3" , 0)
-g.add_vertex("k4" , 0)
-g.add_vertex("k5" , 0)
+# g = Graph()
+# g.add_vertex("k" , 0)
+# g.add_vertex("k2" , 0)
+# g.add_vertex("k3" , 0)
+# g.add_vertex("k4" , 0)
+# g.add_vertex("k5" , 0)
+#
+# g.add_edge('k' , 'k2')
+# g.add_edge('k3' , 'k4')
+# print('Done')
 
-g.add_edge('k' , 'k2')
-g.add_edge('k3' , 'k4')
-print('Done')
 
+
+
+# print('sdf')
+# x = 'nine'
+# try:
+#     print((InterSection[x].value))
+# except KeyError as e:
+#     print(e)
+
+graph = [
+    [0, 4, 2, 0, 0, 0, 0, 0, 0],
+    [4, 0, 0, 5, 0, 0, 0, 0, 0],
+    [2, 0, 0, 3, 0, 0, 0, 0, 0],
+    [0, 5, 3, 0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 2, 0, 0, 0],
+    [0, 0, 0, 0, 2, 0, 4, 0, 0],
+    [0, 0, 0, 0, 0, 4, 0, 5, 0],
+    [0, 0, 0, 0, 0, 0, 5, 0, 3],
+    [0, 0, 0, 0, 0, 0, 0, 3, 0]
+]
+
+vertices2 = list()
+v0 = Vertex(0,False)
+v1 = Vertex(1,True)
+v2 = Vertex(2,False)
+v3 = Vertex(3,False)
+v4 = Vertex(4,True)
+v5 = Vertex(5,False)
+v6 = Vertex(6,True)
+v7 = Vertex(7,False)
+v8 = Vertex(8,True)
+vertices2.append(v0)
+vertices2.append(v1)
+vertices2.append(v2)
+vertices2.append(v3)
+vertices2.append(v4)
+vertices2.append(v5)
+vertices2.append(v6)
+vertices2.append(v7)
+vertices2.append(v8)
+c = CityMap(len(vertices2) , vertices2 , graph)
+rslt = c.dijkstra(7)
+print(rslt.key.name)
