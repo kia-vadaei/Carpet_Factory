@@ -1,6 +1,8 @@
 import json
 import os.path
+import random
 import subprocess
+import tkinter
 from tkinter import filedialog
 
 from MyGraph import Graph
@@ -40,7 +42,7 @@ class Carpet :
 
         return magnified_matrix
 
-    def set_layout(self , matrix, output_path):
+    def set_layout(self , matrix, output_path , status = 0):
         height = len(matrix)
         width = len(matrix[0])
         matrix = self.magnify_plan(matrix , int(300 / width))
@@ -62,12 +64,19 @@ class Carpet :
 
         # Save the image to the specified output path
         self.layout_path = output_path
-        image.save(output_path)
+        if status == 0:
+            image.save(output_path)
 
-    def load_image(self):
+    def load_image(self ,path=None):
+        if path is None:
+            window = tkinter.Tk()
+            image_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
+        else:
+            image_path = path
 
-        image_path = filedialog.askopenfile(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
-        image = Image.open(image_path.name)
+        image_path = image_path.name
+
+        image = Image.open(image_path)
         # image = image.convert('L')  # Convert image to grayscale
 
         # Convert image to a 2D matrix
@@ -90,8 +99,7 @@ class Carpet :
             matrix.append(row)
 
 
-        output_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
-        self.set_layout(matrix , output_path)
+        self.set_layout(matrix , image_path , 1)
         self.reverse_magnify(matrix , 50)
 
         return matrix
@@ -108,6 +116,16 @@ class Carpet :
             y = 0
         self.carpet_layout_6_in_8_matrix = reverse_magnify_matrix
 
+
+    @staticmethod
+    def set_carpets():
+        carpets = list()
+        image_path = filedialog.askopenfiles()
+        for path in image_path:
+            c = Carpet(random.randint(1000,5000))
+            c.load_image(path)
+            carpets.append(c)
+        return carpets
     def show_layout(self) :
         if self.layout_path != '':
             img = Image.open(self.layout_path)
