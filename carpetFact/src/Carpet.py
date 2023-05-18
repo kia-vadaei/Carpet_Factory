@@ -89,12 +89,24 @@ class Carpet :
                     row.append(0)  # White pixel
             matrix.append(row)
 
+
         output_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes=[('PNG Image', '*.png')])
         self.set_layout(matrix , output_path)
+        self.reverse_magnify(matrix , 50)
 
         return matrix
 
-
+    def reverse_magnify(self , matrix , scale_factor):
+        reverse_magnify_matrix = [[0] * 6 for x in range(8)]
+        x = 0
+        y = 0
+        for i in range(0,400, scale_factor):
+            for j in range(0,300, scale_factor):
+                reverse_magnify_matrix[x][y] = matrix[i][j]
+                y = y + 1
+            x = x + 1
+            y = 0
+        self.carpet_layout_6_in_8_matrix = reverse_magnify_matrix
 
     def show_layout(self) :
         if self.layout_path != '':
