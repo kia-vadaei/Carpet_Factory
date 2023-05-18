@@ -252,7 +252,9 @@ def animated_effect(str):
         time.sleep(90/1000)
     time.sleep(200/1000)
 #print('\t\t*** UNIVERSITY OF ISFAHAN ***')
-#animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
+
+
+animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
 
 
 while True:
@@ -282,11 +284,13 @@ while True:
 
     elif cmd == '2':    # Search by carpet design
         input_carpet = Carpet(0)
-
         input_carpet.load_image()
-
+        print('d')
     elif cmd == '3':    # Purchase based on amount of money
         print()
     elif cmd == '4':    # Navigate to the nearest factory store
         print()
 
+# input_carpet = Carpet(0)
+# input_carpet.load_image()
+# print('2')
