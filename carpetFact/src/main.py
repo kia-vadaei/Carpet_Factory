@@ -254,7 +254,7 @@ def animated_effect(str):
 #print('\t\t*** UNIVERSITY OF ISFAHAN ***')
 
 
-animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
+#animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
 
 
 while True:
