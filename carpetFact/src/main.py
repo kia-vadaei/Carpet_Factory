@@ -257,7 +257,7 @@ def animated_effect(str):
 #print('\t\t*** UNIVERSITY OF ISFAHAN ***')
 
 
-animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
+#animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
 
 print(Fore.MAGENTA +'Select the initial carpets...\n---------------------------------')
 time.sleep(1)
@@ -293,15 +293,30 @@ while True:
         input_carpet.load_image()
         rslt = Carpet.search(input_carpet , carpets)
 
+        print('The result will be shown soon...')
+
+        time.sleep(2)
+
 
         rslt[2].key.show_layout()
         rslt[1].key.show_layout()
         rslt[0].key.show_layout()
 
 
-        print('d')
     elif cmd == '3':    # Purchase based on amount of money
-        print()
+
+        print("🟪 The prices are as follows: " , end=' ')
+
+        for carpet in carpets:
+            print(carpet.price , end=' ')
+
+        print('\n🟪 Enter the amount  of your money :', end=' ')
+        input_money = int(input())
+        res , res_list = Carpet.efficient_shopping(input_money , carpets , [1] * len(carpets) ,len(carpets))
+
+        print('🟣 The result is :' ,end=' ')
+        print(res , res_list)
     elif cmd == '4':    # Navigate to the nearest factory store
         print()
 
+    print('\n---------------------------------')
