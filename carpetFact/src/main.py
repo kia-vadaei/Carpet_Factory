@@ -1,6 +1,7 @@
 import os
 import random
 import time
+from tkinter import filedialog
 
 from Carpet import Carpet
 from LeastColor import AdjacencyGraph
@@ -246,9 +247,11 @@ from colorama import Back
 # rslt = c.dijkstra(7)
 # print(rslt.key.name)
 
+
+
 def animated_effect(str):
     for c in str:
-        print(c , end='')
+        print(Fore.BLUE + c , end='')
         time.sleep(90/1000)
     time.sleep(200/1000)
 #print('\t\t*** UNIVERSITY OF ISFAHAN ***')
@@ -256,6 +259,9 @@ def animated_effect(str):
 
 #animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
 
+print(Fore.MAGENTA +'Select the initial carpets...\n---------------------------------')
+time.sleep(1)
+carpets = Carpet.set_carpets()
 
 while True:
     print(Fore.MAGENTA + '1) Design a new carpet')
@@ -285,12 +291,32 @@ while True:
     elif cmd == '2':    # Search by carpet design
         input_carpet = Carpet(0)
         input_carpet.load_image()
-        print('d')
+        rslt = Carpet.search(input_carpet , carpets)
+
+        print('The result will be shown soon...')
+
+        time.sleep(2)
+
+
+        rslt[2].key.show_layout()
+        rslt[1].key.show_layout()
+        rslt[0].key.show_layout()
+
+
     elif cmd == '3':    # Purchase based on amount of money
-        print()
+
+        print("🟪 The prices are as follows: " , end=' ')
+
+        for carpet in carpets:
+            print(carpet.price , end=' ')
+
+        print('\n🟪 Enter the amount  of your money :', end=' ')
+        input_money = int(input())
+        res , res_list = Carpet.efficient_shopping(input_money , carpets , [1] * len(carpets) ,len(carpets))
+
+        print('🟣 The result is :' ,end=' ')
+        print(res , res_list)
     elif cmd == '4':    # Navigate to the nearest factory store
         print()
 
-# input_carpet = Carpet(0)
-# input_carpet.load_image()
-# print('2')
+    print('\n---------------------------------')
