@@ -48,7 +48,7 @@ class CityMap :
 		for department in department_list :
 			if department.key.is_department:
 				return department
-		raise Exception('in love with melika')
+		raise Exception('Something went wrong!')
 
 
 
