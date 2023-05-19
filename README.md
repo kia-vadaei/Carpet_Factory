@@ -12,9 +12,13 @@
           Spring 2023
            </br>
 </div>
+
 <div dir='ltr' align="justify">
+
   
-### Carpet Factory
+</br>
+
+<h1>Carpet Factory</h1>
 
 
 A carpet weaving factory needs a system to manage and mechanize factory work. This system includes various departments such as design, sales, distribution, etc.
@@ -24,8 +28,11 @@ Each part of this system is explained separately.
 The factory plans to introduce new carpets to the market, so it wants to design new plans. They plan to weave carpets that are made of shapes
 are formed geometrically and these geometric shapes are adjacent to each other. Each of these geometric shapes is the same color. The number of colors used
 The cost of the woven carpet is lower if it is less for the weave of the carpet. For this reason, the factory wants the least number of colors by receiving information from the carpet areas
-Find the requirement as well as the color assigned to each of the areas using the graph coloring algorithm.
 
+</br>
+</br>
+
+__🟣 Using the graph coloring algorithm, the required number of colors has been obtained.__
   
 <h2>Shopping</h2>
   
