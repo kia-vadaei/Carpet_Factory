@@ -59,13 +59,12 @@ city_graph_vertices.append(v7)
 city_graph_vertices.append(v8)
 
 
-
-animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
-
-print(Fore.MAGENTA +'Select the initial carpets...\n---------------------------------')
-time.sleep(1)
-carpets = Carpet.set_carpets()
 try:
+    animated_effect('\t\t*** UNIVERSITY OF ISFAHAN ***\n\n')
+
+    print(Fore.MAGENTA +'Select the initial carpets...\n---------------------------------')
+    time.sleep(1)
+    carpets = Carpet.set_carpets()
     while True:
         print(Fore.MAGENTA + '1) Design a new carpet')
         print('2) Search by carpet design')
