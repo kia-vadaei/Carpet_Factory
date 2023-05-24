@@ -95,9 +95,11 @@ try:
             input_carpet.load_image()
             rslt = Carpet.search(input_carpet , carpets)
 
-            print('The result will be shown soon...')
+            print('The result will be shown soon... ')
 
             time.sleep(2)
+
+            print('\n-> {0} %\n-> {1} %\n-> {2} %' .format(rslt[2].value ,rslt[1].value , rslt[0].value ))
 
 
             rslt[2].key.show_layout()

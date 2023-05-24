@@ -178,10 +178,11 @@ class Carpet :
 
     @staticmethod
     def search(input_carpet , carpets=list):
+        max_score = Carpet.calculate_similarity(input_carpet.carpet_layout_6_in_8_matrix , input_carpet.carpet_layout_6_in_8_matrix)
 
         score_list = list()
         for carpet in carpets:
-            myMap = MyMap(carpet , Carpet.calculate_similarity(input_carpet.carpet_layout_6_in_8_matrix , carpet.carpet_layout_6_in_8_matrix))
+            myMap = MyMap(carpet , Carpet.calculate_similarity(input_carpet.carpet_layout_6_in_8_matrix , carpet.carpet_layout_6_in_8_matrix) / max_score*100)
 
             score_list.append(myMap)
 
