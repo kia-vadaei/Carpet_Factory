@@ -56,10 +56,10 @@ class CityMap :
 	def show_diagram(left_coordinates , heights):
 		bar_labels = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
 
-		plt.bar(left_coordinates, heights, tick_label=bar_labels, width=0.6, color=['red', 'black'])
+		plt.bar(left_coordinates, heights, tick_label=bar_labels, width=0.6, color=['cyan', 'purple'])
 		plt.xlabel('Vertices')
 		plt.ylabel('Distance')
-		plt.title("A simple line graph")
+		plt.title("Vertex-Distance line graph")
 		plt.show()
 	def minDistance(self, dist, sptSet):
 

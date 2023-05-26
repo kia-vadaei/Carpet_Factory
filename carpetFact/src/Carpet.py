@@ -172,7 +172,7 @@ class Carpet :
                 alignment_matrix[i][j] = max(match, delete, insert)
 
         # The similarity score is the value in the bottom-right corner of the alignment matrix
-        similarity_score = alignment_matrix[len1][len2]
+            similarity_score = alignment_matrix[len1][len2]
 
         return similarity_score
 
